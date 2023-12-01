@@ -1,0 +1,7 @@
+
+<div class="alert alert-dark" role="alert" #div [style.background-color]="couleurDiv">
+    <input type="text" [(ngModel)]="couleurDiv">
+</div>
+
+<button class="btn btn-primary" type="submit" (click)="reinitialiserCouleur(div)">Réinitialiser la couleur</button>
+<app-filspremier [couleur]="couleurDiv" (ColorChange)="change($event)"/>

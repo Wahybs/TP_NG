@@ -1,0 +1,121 @@
+<style>
+    body {
+        margin-top: 100px;
+    }
+
+    .navbar-default .navbar-nav>li>a {
+        padding: 15px 15px;
+        margin: 5px 0;
+    }
+
+    .navbar-default {
+        padding: 10px 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        border-color: transparent;
+        box-shadow: 0 0px 13px rgba(0, 0, 0, .2);
+    }
+
+    .btn-info,
+    .btn-info:hover,
+    .btn-info:focus {
+        color: #FFF !important;
+        background-color: #00bbff !important;
+        border-color: #00bbff !important;
+    }
+
+    .btn-info {
+        opacity: .8;
+        transition: all 0.1s;
+        -webkit-transition: all 0.1s;
+    }
+
+    .btn-info:hover,
+    .btn-info:focus {
+        opacity: 1;
+    }
+</style>
+
+<div class="container">
+
+    <div class="col-sm-10 col-sm-offset-1">
+        <div class="col-md-4 col-sm-6">
+            <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="../../assets/images/rotating_card_thumb2.png" />
+                        </div>
+                        <div class="user">
+                            <img class="img-circle" src="../../assets/images/{{image}}" />
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h3 class="name">{{firstname}} {{name}}</h3>
+                                <p class="profession">{{job}}</p>
+                                <p class="text-center">{{citation}}</p>
+                            </div>
+                            <div class="footer">
+                                <i class="fa fa-mail-forward"></i> Auto Rotation
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+                    <div class="back">
+                        <div class="header">
+                            <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+                        </div>
+                        <div class="content">
+                            <div class="main">
+                                <h4 class="text-center">{{description}}</h4>
+                                <p class="text-center">{{mots}}</p>
+
+                                <div class="stats-container">
+                                    <div class="stats">
+                                        <h4>235</h4>
+                                        <p>
+                                            Followers
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>114</h4>
+                                        <p>
+                                            Following
+                                        </p>
+                                    </div>
+                                    <div class="stats">
+                                        <h4>35</h4>
+                                        <p>
+                                            Projects
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="footer">
+                            <div class="social-links text-center">
+                                <a href="https://creative-tim.com" class="facebook"><i
+                                        class="fa fa-facebook fa-fw"></i></a>
+                                <a href="https://creative-tim.com" class="google"><i
+                                        class="fa fa-google-plus fa-fw"></i></a>
+                                <a href="https://creative-tim.com" class="twitter"><i
+                                        class="fa fa-twitter fa-fw"></i></a>
+                            </div>
+                        </div>
+                    </div> <!-- end back panel -->
+                </div> <!-- end card -->
+            </div> <!-- end card-container -->
+        </div> <!-- end col sm 3 -->
+
+      
+
+    </div>
+  <div class="col-md-6">
+            Nom : <input type="text" class="form-control" [(ngModel)]="name">
+            Prénom : <input type="text" class="form-control" [(ngModel)]="firstname">
+            job : <input type="text" class="form-control" [(ngModel)]="job">
+            Image : <input type="text" class="form-control" [(ngModel)]="image">
+            Citation favorite : <input type="text" class="form-control" [(ngModel)]="citation">
+            Décrivez nous votre travail : <input type="text" class="form-control" [(ngModel)]="description">
+            Mots Clés : <input type="text" class="form-control" [(ngModel)]="mots">
+        </div>
+    </div>

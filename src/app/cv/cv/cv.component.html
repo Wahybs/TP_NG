@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col">
+      <app-list (envcv)="envoyercv($event)" [cvs]="cvs"></app-list>
+    </div>
+    <div class="col">
+      <app-cv-detail [cv]="selectedCv"></app-cv-detail>
+    </div>
+  </div>
+
+<br>
+<h4>Liste des personnes embauchés</h4>
+<div class="row">
+  <app-embauche/>
+</div>
