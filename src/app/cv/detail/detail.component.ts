@@ -2,7 +2,7 @@ import { Component} from '@angular/core';
 import { Cv } from '../model/cv';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CvService } from '../cv.service';
-import { EmbaucherService } from '../embaucher.service';
+
 
 @Component({
   selector: 'app-detail',

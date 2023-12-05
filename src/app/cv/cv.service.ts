@@ -7,6 +7,10 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class CvService {
+  /*update*/ 
+  private selectCvSubject = new Subject<Cv>();
+  selectCv$ = this.selectCvSubject.asObservable();
+  /*update*/ 
   private personnes : Cv[] = []
   private fakepersonnes: Cv [] = [
     new Cv(1, "Slimen", "Labyeth", 48,"1254976","psychothérapeute","slimen.png"),
@@ -39,5 +43,9 @@ export class CvService {
     let index = this.personnes.indexOf(item);
     this.personnes.splice(index, 1);
   }
- 
+ /** update */
+  selectCv(cv: Cv) {
+    this.selectCvSubject.next(cv);
+  }
+  /**update */
 }

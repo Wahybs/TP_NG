@@ -2,7 +2,8 @@ import { Component } from "@angular/core";
 import { Cv } from "../model/cv";
 import { CvService } from "../cv.service";
 import { ToastrService } from 'ngx-toastr'; 
-
+import { distinctUntilChanged } from "rxjs";
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 @Component({
   selector: "app-cv",
   templateUrl: "./cv.component.html",
@@ -22,7 +23,14 @@ export class CvComponent {
         this.cvs = this.cvservice.getFakeCvnes();
         this.cvservice.setterCvnes(this.cvs)
     }
-  })
+  });
+  /* updtae */
+  this.cvservice.selectCv$
+  .pipe(
+    distinctUntilChanged(),
+    takeUntilDestroyed()
+  )
+  /** update */
   }
   envoyercv(cv: Cv) {
     this.selectedCv = cv;

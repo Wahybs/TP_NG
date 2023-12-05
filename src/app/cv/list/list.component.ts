@@ -9,11 +9,11 @@ import { Cv } from "../model/cv";
 export class ListComponent {
   @Input() cvs: Cv[] = [];
  
- @Output()
-  envcv = new EventEmitter();
+ //@Output()
+  //envcv = new EventEmitter();
 
 
   onSelectCv(cv: Cv): void {
-    this.envcv.emit(cv);
+    //this.envcv.emit(cv);
   }
 }

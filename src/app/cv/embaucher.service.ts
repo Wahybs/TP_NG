@@ -15,9 +15,12 @@ export class EmbaucherService {
     let index = this.cvs.indexOf(item);
     if (index == -1){
       this.cvs.push(item);
-      this.toastr.success(`${item.name} ${item.firstname} a été embauché avec succès`, 'Embauché');}
+      this.toastr.success(`${item.name} ${item.firstname} a été embauché avec succès`, 'Embauché');
+     
+    }
     else {
       this.toastr.warning(`${item.name} ${item.firstname} est déjà embauché`, 'Attention')
+      
     }
     }
   }
