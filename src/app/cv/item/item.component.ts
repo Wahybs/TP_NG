@@ -10,10 +10,13 @@ export class ItemComponent {
  
   @Input()
   cv: Cv | null = null;
+  cvService: any;
   @Output()
   selectCv = new EventEmitter<Cv>();
 
   onSelectCv() {
-    if (this.cv) this.selectCv.emit(this.cv);
+    if (this.cv) 
+    this.selectCv.emit(this.cv);
+    
   }
 }

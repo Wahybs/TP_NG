@@ -9,7 +9,7 @@ import { Cv } from "../model/cv";
 export class ListComponent {
   @Input() cvs: Cv[] = [];
  
-  @Output()
+ @Output()
   envcv = new EventEmitter();
 
 

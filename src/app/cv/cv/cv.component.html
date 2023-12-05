@@ -1,9 +1,10 @@
 <div class="row">
     <div class="col">
-      <app-list (envcv)="envoyercv($event)" [cvs]="cvs"></app-list>
+     <app-list (envcv)="envoyercv($event)" [cvs]="cvs"></app-list>
+    
     </div>
     <div class="col">
-      <app-cv-detail [cv]="selectedCv"></app-cv-detail>
+      <app-cv-detail [cv]="selectedCv!"></app-cv-detail>
     </div>
   </div>
 

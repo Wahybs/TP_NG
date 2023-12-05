@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { Cv } from "../model/cv";
+import { CvService } from "../cv.service";
+import { ToastrService } from 'ngx-toastr'; 
 
 @Component({
   selector: "app-cv",
@@ -7,12 +9,21 @@ import { Cv } from "../model/cv";
   styleUrls: ["./cv.component.css"],
 })
 export class CvComponent {
-  selectedCv: Cv = new Cv();
-  cvs: Cv[] = [
-    new Cv(1, "Slimen", "Labyeth", 48,"1254976","psychothérapeute","slimen.png"),
-    new Cv(2, "fouchika", "ferid",38,"0145787","portier", "fouchika.jpg"),
-    new Cv(3, "Janet", "el3arafa",53,"0135687","test")
-  ];
+  selectedCv: Cv |null=null;
+  cvs : Cv[] =[];
+  constructor(private cvservice : CvService , private toastr:ToastrService ) {
+    this.cvservice.getCvnes$().subscribe({
+     next: (item)=>{
+        this.cvs = item;
+        this.cvservice.setterCvnes(item)
+      },
+    error:(error)=>{
+        this.toastr.warning("Connexion a l'API à échouer, c'est pourquoi on affiche fake data ");
+        this.cvs = this.cvservice.getFakeCvnes();
+        this.cvservice.setterCvnes(this.cvs)
+    }
+  })
+  }
   envoyercv(cv: Cv) {
     this.selectedCv = cv;
   }

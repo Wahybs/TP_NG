@@ -17,6 +17,9 @@ import {HttpClientModule } from '@angular/common/http';
 import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { ToastrModule } from 'ngx-toastr';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DetailComponent } from './cv/detail/detail.component';
+import { LoginComponent } from './login/login.component';
+import { ObservableComponent } from './observable/observable.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { NavbarComponent } from './navbar/navbar.component';
     ListComponent,
     DefaultImagePipe,
     EmbaucheComponent,
-    NavbarComponent
+    NavbarComponent,
+    DetailComponent,
+    LoginComponent,
+    ObservableComponent
   ],
   imports: [
     FormsModule,

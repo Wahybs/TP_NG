@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class CvDetailComponent {
   @Input()
-  cv: Cv = new Cv();
+  cv: Cv = new Cv() ;
  constructor(private embaucheservice:EmbaucherService, private route:Router){}
  
   embaucher(){

@@ -1,13 +1,12 @@
 import { Injectable,Inject } from '@angular/core';
 import { Cv } from './model/cv';
 import {HttpClient} from "@angular/common/http";
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CvService {
-
   private personnes : Cv[] = []
   private fakepersonnes: Cv [] = [
     new Cv(1, "Slimen", "Labyeth", 48,"1254976","psychothérapeute","slimen.png"),
@@ -15,8 +14,7 @@ export class CvService {
     new Cv(3, "Janet", "el3arafa",53,"0135687","test")
   ]
 
-  constructor(private http:HttpClient) {
-  }
+  constructor(private http:HttpClient) {}
   
   getCvnes$(): Observable<Cv[]> {
     return this.http.get<Cv[]>('https://apilb.tridevs.net/api/personnes')
@@ -37,14 +35,9 @@ export class CvService {
       return person.id == id
     });
   }
-
-  addCvne(personne: Cv) {
-    personne.id = this.personnes.length + 1;
-    this.personnes.push(personne);
-  }
-
   deleteCvne(item: Cv) {
     let index = this.personnes.indexOf(item);
     this.personnes.splice(index, 1);
   }
+ 
 }
